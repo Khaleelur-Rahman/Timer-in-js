@@ -1,0 +1,42 @@
+#form {
+    position: absolute;
+    top: 40%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+#minutes{
+    width : 30%;
+}
+
+#seconds {
+    width : 30%;
+}
+
+#statement {
+    position: absolute;
+    top: 30%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+#time {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    cursor: progress;
+}
+#buttons {
+    position: absolute;
+    top: 60%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    cursor: pointer;
+}
+#buttons > button {
+    border-radius: 8px;
+    border-color: blueviolet;
+    background-color: #fdb0c0;
+    font-size: 20px;
+}

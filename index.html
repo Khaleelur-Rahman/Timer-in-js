@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+
+    <title>Select Time</title>
+</head>
+<body>
+    <h2 id = "statement" style="font-size: 20px;">Enter and submit a new time to count down:</h2>
+    <form id="form">
+        <input type = "number" id ="minutes" placeholder="Minutes" min="0" maxlength="2">
+        <input type = "number" id = "seconds" placeholder="Seconds" min ="0" max="59">
+        <input type="submit" value="Submit"></input>
+    </form>
+    <h1 id="time"></h1>
+    <div id = "buttons">
+        <button id="button">Start</button>
+        <button id="reset">Reset</button>
+    </div>
+    <script src="script.js"></script>
+
+</body>
+</html>
