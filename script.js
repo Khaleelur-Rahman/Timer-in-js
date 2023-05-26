@@ -1,28 +1,65 @@
-const time = document.getElementById("time");
-const mainButton = document.getElementById("button");
-const resetButton = document.getElementById("reset");
+// const time = document.getElementById("time");
+// const mainButton = document.getElementById("button");
+// const resetButton = document.getElementById("reset");
 
-let currentTime="00:00";
-let initialTime;
-let countdownInterval;
+// let currentTime="00:00";
+// let initialTime;
+// let countdownInterval;
 
 document.getElementById("form").addEventListener("submit", function(event){
     event.preventDefault();
 
-        var minutes = document.getElementById("minutes").value;
+    if(!document.getElementById("time")) {
+
+    const temp = document.createElement("h1");
+    temp.setAttribute("id", "time");
+    document.body.appendChild(temp);
+
+    const temp1 = document.createElement("div");
+    temp1.setAttribute("id", "buttons");
+    document.body.appendChild(temp1);
+
+    const temp2 = document.createElement("button");
+    temp2.setAttribute("id", "button");
+    document.getElementById("buttons").appendChild(temp2);
+
+    const temp3 = document.createElement("button");
+    temp3.setAttribute("id", "reset");
+    document.getElementById("buttons").appendChild(temp3);
+    }
+
+
+    var minutes = document.getElementById("minutes").value;
     var seconds = document.getElementById("seconds").value;
 
     if(minutes.length === 1)minutes = "0" + minutes;
     if(seconds.length === 1) seconds = "0" + seconds;
 
-    currentTime = minutes + ":" + seconds;
-    initialTime = currentTime;
+    let currentTime = minutes + ":" + seconds;
+    // initialTime = currentTime;
     time.textContent = `${currentTime}`;
 
     document.getElementById("form").reset();
-    mainButton.textContent = "Start";
-    clearInterval(countdownInterval);
+    // mainButton.textContent = "Start";
+    // clearInterval(countdownInterval);
+    solve(currentTime);
+
 })
+
+function solve(Time) {
+
+const time = document.getElementById("time");
+const mainButton = document.getElementById("button");
+const resetButton = document.getElementById("reset");
+
+mainButton.textContent = "Start";
+resetButton.textContent = "Reset"
+
+let currentTime=Time;
+let initialTime=currentTime;
+let countdownInterval;
+
+
 
 mainButton.addEventListener('click', ()=>{
     timerEvents(mainButton);
@@ -77,5 +114,6 @@ function changeTime() {
     currentTime = temp[0] + ":" + temp[1];
     time.textContent = `${currentTime}`
 }
+};
 
 
